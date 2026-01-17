@@ -29,13 +29,13 @@ function bb_theme_scripts() {
 	wp_enqueue_style( 'bb-google-fonts', 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap', array(), null );
 	
 	// Main stylesheet
-	wp_enqueue_style( 'bb-assets', get_template_directory_uri() . '/assets.css', array('bb-google-fonts'), '1.0.0' );
+	wp_enqueue_style( 'bb-assets', get_template_directory_uri() . '/assets.css', array('bb-google-fonts'), '1.1.0' );
 	
 	// Page-specific styles
-	wp_enqueue_style( 'bb-page-styles', get_template_directory_uri() . '/page-styles.css', array('bb-assets'), '1.0.0' );
+	wp_enqueue_style( 'bb-page-styles', get_template_directory_uri() . '/page-styles.css', array('bb-assets'), '1.1.0' );
 	
 	// Main JavaScript
-	wp_enqueue_script( 'bb-main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'bb-main', get_template_directory_uri() . '/js/main.js', array(), '1.1.0', true );
 	
 	// Localize script for AJAX
 	wp_localize_script( 'bb-main', 'bbTheme', array(
