@@ -3,8 +3,49 @@
  * Template Name: BB Full Flavor Product Page
  */
 
-get_header();
+get_header(); ?>
 
+<style>
+/* EMERGENCY CACHE BYPASS - FORCING LUXURY DARK THEME */
+:root {
+    --luxury-charcoal: #1A1A1A !important;
+    --luxury-off-white: #F9F7F2 !important;
+    --luxury-gold: #D4AF37 !important;
+}
+body, .product-page {
+    background-color: #1A1A1A !important;
+    background: #1A1A1A !important;
+    color: #F9F7F2 !important;
+}
+.c-anchor-nav {
+    background: #1A1A1A !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+.c-anchor-nav__list {
+    display: flex !important;
+    flex-direction: row !important;
+    list-style: none !important;
+    justify-content: center !important;
+    gap: 2rem !important;
+    padding: 0 !important;
+}
+.c-anchor-nav__list li { list-style: none !important; margin: 0 !important; }
+.c-hero { background: #1A1A1A !important; padding-top: 100px !important; }
+.c-hero__grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 4rem !important;
+    align-items: center !important;
+}
+h1, h2, h3 { color: #D4AF37 !important; font-family: 'Playfair Display', serif !important; }
+h1 { letter-spacing: -0.02em !important; font-size: 3.5rem !important; }
+@media (max-width: 992px) {
+    .c-hero__grid { grid-template-columns: 1fr !important; text-align: center !important; }
+    .c-anchor-nav { display: none !important; }
+}
+</style>
+
+<?php
 // SEO: Schema.org Product & FAQ Markup
 ?>
 <script type="application/ld+json">
