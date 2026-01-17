@@ -10,33 +10,31 @@ get_header();
     
     <!-- Product Hero -->
     <section class="product-hero">
-        <div class="container">
-            <div class="product-hero-grid">
-                <div class="product-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/full-flavor-pack.png" alt="BB Full Flavor Cigarettes Pack">
+        <div class="product-hero-grid">
+            <div class="product-image">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/full-flavor-pack.png" alt="BB Full Flavor Cigarettes Pack">
+            </div>
+            <div class="product-details">
+                <span class="product-category">Premium Full Flavor</span>
+                <h1>BB Full Flavor Cigarettes</h1>
+                <p class="product-subtitle">Experience the flagship BB Full Flavour Cigarettes that deliver the complete premium smoking experience. Crafted for smokers who appreciate bold, uncompromised tobacco character and rich, satisfying taste with every draw.</p>
+                
+                <div class="product-specs">
+                    <h3>Product Specifications</h3>
+                    <ul>
+                        <li><strong>Flavor Profile:</strong> Bold, robust, full-bodied</li>
+                        <li><strong>Strength:</strong> Full strength</li>
+                        <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
+                        <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
+                        <li><strong>Filter Type:</strong> Standard cellulose acetate filter</li>
+                        <li><strong>Tobacco Blend:</strong> Premium Virginia and Burley blend</li>
+                        <li><strong>Availability:</strong> Available across Canada</li>
+                    </ul>
                 </div>
-                <div class="product-details">
-                    <span class="product-category">Premium Full Flavor</span>
-                    <h1>BB Full Flavor Cigarettes - Bold & Robust Smoking Experience</h1>
-                    <p class="product-subtitle">Experience the flagship BB Full Flavour Cigarettes that deliver the complete premium smoking experience. Crafted for smokers who appreciate bold, uncompromised tobacco character and rich, satisfying taste with every draw.</p>
-                    
-                    <div class="product-specs">
-                        <h3>Product Specifications</h3>
-                        <ul>
-                            <li><strong>Flavor Profile:</strong> Bold, robust, full-bodied</li>
-                            <li><strong>Strength:</strong> Full strength</li>
-                            <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
-                            <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
-                            <li><strong>Filter Type:</strong> Standard cellulose acetate filter</li>
-                            <li><strong>Tobacco Blend:</strong> Premium Virginia and Burley blend</li>
-                            <li><strong>Availability:</strong> Available across Canada</li>
-                        </ul>
-                    </div>
 
-                    <div class="product-cta">
-                        <a href="https://1smokes.ca/bb-cigarettes-online/" class="btn btn-primary btn-large">Buy BB Full Flavor Online</a>
-                        <p class="age-notice">⚠️ 18+ Only (19+ in some provinces). Must be of legal smoking age.</p>
-                    </div>
+                <div class="product-cta">
+                    <a href="https://1smokes.ca/bb-cigarettes-online/" class="btn btn-primary btn-large">Buy BB Full Flavor Online</a>
+                    <p class="age-notice">⚠️ 18+ Only (19+ in some provinces). Must be of legal smoking age.</p>
                 </div>
             </div>
         </div>
@@ -45,6 +43,7 @@ get_header();
     <!-- Product Overview -->
     <section class="product-section">
         <div class="container">
+            <span class="section-label">Overview</span>
             <h2>What Makes BB Full Flavor Cigarettes Special</h2>
             <p>BB Full Flavor Cigarettes represent the pinnacle of premium tobacco craftsmanship, designed specifically for experienced smokers who refuse to compromise on quality or taste. As the flagship variant in the BB Cigarettes product line, Full Flavor delivers an authentic, unfiltered tobacco experience that has made it a preferred choice among discerning Canadian smokers.</p>
             
@@ -57,6 +56,7 @@ get_header();
     <!-- Tobacco Blend Details -->
     <section class="product-section alt-bg">
         <div class="container">
+            <span class="section-label">Composition</span>
             <h2>Premium Tobacco Blend & Composition</h2>
             
             <div class="two-column-layout">
@@ -80,6 +80,7 @@ get_header();
     <!-- Features & Benefits -->
     <section class="product-section">
         <div class="container">
+            <span class="section-label">Features</span>
             <h2>Key Features & Smoking Benefits</h2>
             <div class="features-grid-detailed">
                 <div class="feature-detailed">
@@ -132,6 +133,7 @@ get_header();
     <!-- Why Choose Full Flavor -->
     <section class="product-section alt-bg">
         <div class="container">
+            <span class="section-label">Why Choose</span>
             <h2>Why Choose BB Full Flavor Over Other Cigarettes</h2>
             
             <p>In a crowded cigarette market, BB Full Flavor distinguishes itself through unwavering commitment to quality and consistency. While many brands compromise on tobacco quality to reduce costs, BB Cigarettes maintains strict standards for leaf selection, ensuring only premium materials make it into every pack.</p>
@@ -163,8 +165,11 @@ get_header();
     <!-- Compare to Other BB Variants -->
     <section class="product-section">
         <div class="container">
-            <h2>Compare BB Full Flavor to Other BB Variants</h2>
-            <p>BB Cigarettes offers three distinct variants to match different smoking preferences. While all share the same commitment to quality, each provides a unique experience:</p>
+            <div class="section-header">
+                <span class="section-label">Comparison</span>
+                <h2>Compare BB Full Flavor to Other BB Variants</h2>
+                <p>BB Cigarettes offers three distinct variants to match different smoking preferences.</p>
+            </div>
 
             <div class="variants-comparison">
                 <div class="variant-compare">
@@ -193,6 +198,7 @@ get_header();
     <!-- How to Buy -->
     <section class="product-section alt-bg">
         <div class="container">
+            <span class="section-label">Buying Guide</span>
             <h2>How to Buy BB Full Flavor Cigarettes in Canada</h2>
             
             <p>BB Full Flavor Cigarettes are available through authorized retailers across Canada, with convenient online ordering options for home delivery in most provinces.</p>
