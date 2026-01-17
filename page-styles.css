@@ -532,40 +532,43 @@
     font-size: 1.5rem;
     font-family: var(--font-heading);
     text-align: center;
-    /* Or left align if preferred, but center matches calculator */
 }
 
 .product-specs-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
     display: grid;
     grid-template-columns: 1fr;
-    /* Single column stack */
     gap: 12px;
-    /* Gap between cards */
     flex-grow: 1;
-    /* Allow to fill space */
 }
 
 .product-specs-box li {
     background: #ffffff;
     border: 1px solid rgba(201, 169, 98, 0.15);
     border-radius: 8px;
-    /* Slightly smaller radius for items */
-    padding: 1rem 1.25rem;
+    padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     font-size: 0.95rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
     transition: all 0.2s ease;
+    list-style-type: none !important;
 }
 
 .product-specs-box li:hover {
-    transform: translateX(5px);
+    transform: translateY(-3px);
     border-color: var(--color-gold);
-    box-shadow: 0 5px 15px rgba(201, 169, 98, 0.1);
+    box-shadow: 0 8px 20px rgba(201, 169, 98, 0.15);
+}
+
+.product-specs-box li ::marker {
+    display: none;
+    content: "";
 }
 
 .product-specs-box li strong {
@@ -573,10 +576,10 @@
     font-weight: 700;
     text-transform: uppercase;
     font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    width: 40%;
-    /* Fixed width for labels alignment */
-    flex-shrink: 0;
+    letter-spacing: 0.1em;
+    width: auto;
+    margin-bottom: 0.3rem;
+    display: block;
 }
 
 /* Calculator Styles */
