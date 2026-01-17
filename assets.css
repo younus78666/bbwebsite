@@ -44,17 +44,16 @@
 
     --container-max: 1200px;
 
+    /* Existing Variables - Kept for fallback */
     --color-gold: #997a3d;
-    --color-gold-light: #b8944d;
-    --color-gold-dark: #7a6230;
+    --color-gold-light: #b39154;
+    --color-gold-dark: #80622d;
+
     --color-white: #1a1a1a;
     --color-off-white: #2a2a2a;
     --color-gray: #666666;
     --color-gray-dark: #888888;
     --color-gray-light: #444444;
-
-    --font-heading: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -68,10 +67,11 @@
     --transition-fast: all 0.2s ease;
 }
 
-/* Global Luxury Resets */
+/* Global Luxury Resets - ENSURE DARK THEME PER CUSTOMER REQUEST */
 .product-page {
-    background-color: var(--luxury-off-white);
-    color: var(--luxury-text-primary);
+    background-color: var(--luxury-charcoal) !important;
+    /* Force dark background */
+    color: var(--luxury-off-white) !important;
     font-family: var(--font-body);
     line-height: 1.65;
 }
@@ -80,8 +80,14 @@
 .product-page h2,
 .product-page h3 {
     font-family: var(--font-heading);
-    color: var(--luxury-charcoal);
+    color: var(--luxury-gold) !important;
+    /* Gold headings on dark bg */
     font-weight: 700;
+}
+
+.product-page p,
+.product-page li {
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .product-page .container {
@@ -142,7 +148,8 @@ h6 {
 h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.02em !important;
+    /* Fixed wide spacing */
     text-transform: uppercase;
 }
 
@@ -2922,29 +2929,34 @@ body.no-scroll {
 
 /* B. Anchor Nav */
 .c-anchor-nav {
-    background: white;
-    border-bottom: 1px solid var(--luxury-border);
+    background: var(--luxury-charcoal);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
-    top: 60px;
-    /* Adjust based on main header height */
-    z-index: 50;
+    top: 0;
+    z-index: 9999;
     padding: var(--spacing-16) 0;
 }
 
 .c-anchor-nav__list {
-    display: flex;
+    display: flex !important;
     justify-content: center;
-    gap: var(--spacing-24);
-    list-style: none;
+    gap: var(--spacing-32);
+    list-style: none !important;
     margin: 0;
     padding: 0;
 }
 
+.c-anchor-nav__list li {
+    list-style: none !important;
+}
+
 .c-anchor-nav__list a {
-    color: var(--luxury-text-secondary);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9375rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     transition: color 0.2s;
 }
 
@@ -2962,15 +2974,23 @@ body.no-scroll {
 
 /* C. Hero */
 .c-hero {
-    background: linear-gradient(to right, #ffffff, var(--luxury-off-white));
+    background: var(--luxury-charcoal) !important;
     overflow: hidden;
+    padding-top: 100px;
 }
 
 .c-hero__grid {
-    display: grid;
+    display: grid !important;
     grid-template-columns: 1.2fr 1fr;
     gap: var(--spacing-64);
     align-items: center;
+}
+
+.c-trust-icon {
+    font-size: 0.875rem;
+    color: var(--luxury-gold);
+    margin-right: 15px;
+    font-weight: 600;
 }
 
 .c-hero__title {

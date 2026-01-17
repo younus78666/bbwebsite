@@ -92,8 +92,8 @@ get_header();
                     </div>
 
                     <div class="c-hero__trust">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/trust-badge-1.svg" alt="Quality Guaranteed">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/trust-badge-2.svg" alt="Canadian Heritage">
+                        <span class="c-trust-icon">✓ Premium Leaf</span>
+                        <span class="c-trust-icon">✓ Canadian Quality</span>
                     </div>
 
                     <div class="c-hero__pricing">
