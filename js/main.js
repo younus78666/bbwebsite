@@ -159,4 +159,83 @@ document.addEventListener('DOMContentLoaded', function () {
         // Initial calculation
         updateCalculator();
     }
+
+    // --- LUXURY PRODUCT PAGE INTERACTIVITY ---
+
+    // 1. Tabs Logic
+    const tabBtns = document.querySelectorAll('.c-tabs__btn');
+    const tabPanes = document.querySelectorAll('.c-tabs__pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+
+            // Remove active classes
+            tabBtns.forEach(b => b.classList.remove('is-active'));
+            tabPanes.forEach(p => p.classList.remove('is-active'));
+
+            // Add active class to clicked btn and target pane
+            btn.classList.add('is-active');
+            document.getElementById(target).classList.add('is-active');
+        });
+    });
+
+    // 2. Accordion Logic
+    const accordionTriggers = document.querySelectorAll('.c-accordion__trigger');
+
+    accordionTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const content = trigger.nextElementSibling;
+            const isOpen = trigger.classList.contains('is-active');
+
+            // Close all others (optional, for single-open behavior)
+            // accordionTriggers.forEach(t => {
+            //     t.classList.remove('is-active');
+            //     t.nextElementSibling.style.display = 'none';
+            // });
+
+            if (isOpen) {
+                trigger.classList.remove('is-active');
+                content.style.display = 'none';
+            } else {
+                trigger.classList.add('is-active');
+                content.style.display = 'block';
+            }
+        });
+    });
+
+    // 3. Sticky Mobile CTA Logic
+    const mobileStickyCTA = document.getElementById('mobileStickyCTA');
+    const heroSection = document.getElementById('overview');
+
+    if (mobileStickyCTA && heroSection) {
+        window.addEventListener('scroll', () => {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            if (window.scrollY > heroBottom) {
+                mobileStickyCTA.classList.add('is-visible');
+            } else {
+                mobileStickyCTA.classList.remove('is-visible');
+            }
+        });
+    }
+
+    // 4. Smooth Scroll Enhancement for Anchor Nav
+    const anchorNavLinks = document.querySelectorAll('.c-anchor-nav__list a');
+    anchorNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const target = document.querySelector(targetId);
+            if (target) {
+                const navHeight = document.querySelector('.c-anchor-nav').offsetHeight;
+                const headerHeight = document.getElementById('header') ? document.getElementById('header').offsetHeight : 0;
+                const offset = navHeight + headerHeight + 10;
+
+                window.scrollTo({
+                    top: target.offsetTop - offset,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
