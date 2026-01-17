@@ -167,6 +167,11 @@ add_action( 'after_switch_theme', 'bb_create_default_pages' );
  * Adds Meta Tags, Open Graph, Twitter Cards, and Schema.org JSON-LD
  */
 function bb_seo_meta_tags() {
+    // Check if Rank Math or Yoast SEO is active to prevent duplicate tags
+    if ( defined( 'RANK_MATH_VERSION' ) || defined( 'WPSEO_VERSION' ) ) {
+        return;
+    }
+
     global $post;
     
     // Default values
