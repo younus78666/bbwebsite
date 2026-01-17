@@ -1,12 +1,27 @@
 // Age Verification
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const ageOverlay = document.getElementById('ageVerification');
     const ageYesBtn = document.getElementById('ageYes');
     const ageNoBtn = document.getElementById('ageNo');
 
+    // Helper function to get cookie value
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Helper function to set cookie with 30-day expiration
+    function setCookie(name, value, days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        const expires = `expires=${date.toUTCString()}`;
+        document.cookie = `${name}=${value};${expires};path=/`;
+    }
+
     if (ageOverlay) {
-        // Check if user has already verified age
-        if (localStorage.getItem('ageVerified') === 'true') {
+        // Check if user has already verified age (cookie lasts 30 days)
+        if (getCookie('ageVerified') === 'true') {
             ageOverlay.style.display = 'none';
             document.body.classList.remove('no-scroll');
         } else {
@@ -14,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         ageYesBtn.addEventListener('click', function () {
-            localStorage.setItem('ageVerified', 'true');
+            // Set cookie for 30 days
+            setCookie('ageVerified', 'true', 30);
             ageOverlay.classList.add('fade-out');
             setTimeout(() => {
                 ageOverlay.style.display = 'none';
