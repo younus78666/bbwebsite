@@ -34,15 +34,58 @@ get_header();
                 <div class="column">
                     <div class="product-specs-box">
                         <h3>Product Specifications</h3>
-                        <ul>
-                            <li><strong>Flavor Profile:</strong> Bold, robust, full-bodied</li>
-                            <li><strong>Strength:</strong> Full strength</li>
-                            <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
-                            <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
-                            <li><strong>Filter Type:</strong> Standard cellulose acetate filter</li>
-                            <li><strong>Tobacco Blend:</strong> Premium Virginia and Burley blend</li>
-                            <li><strong>Availability:</strong> Available across Canada</li>
-                        </ul>
+                        <?php
+                        $specs = [
+                            [
+                                'label' => 'Flavor Profile', 
+                                'value' => 'Bold, robust, full-bodied',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22h20M2 12h20M2 17h20M2 7h20"/></svg>' // Wind/Air
+                            ],
+                            [
+                                'label' => 'Strength', 
+                                'value' => 'Full strength',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/></svg>' // Plus/Strong
+                            ],
+                            [
+                                'label' => 'Pack Size', 
+                                'value' => '20 cigarettes per pack',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>' // Pack
+                            ],
+                            [
+                                'label' => 'Carton Size', 
+                                'value' => '10 packs (200 cigarettes)',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>' // Box
+                            ],
+                            [
+                                'label' => 'Filter Type', 
+                                'value' => 'Standard cellulose acetate filter',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>' // Filter/Target
+                            ],
+                            [
+                                'label' => 'Tobacco Blend', 
+                                'value' => 'Premium Virginia and Burley blend',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>' // Layers
+                            ],
+                            [
+                                'label' => 'Availability', 
+                                'value' => 'Available across Canada',
+                                'icon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' // Pin
+                            ]
+                        ];
+                        ?>
+                        <div class="spec-cards" aria-label="Product specifications">
+                            <?php foreach ($specs as $spec): ?>
+                                <div class="spec-card">
+                                    <span class="spec-icon" aria-hidden="true">
+                                        <?php echo $spec['icon']; ?>
+                                    </span>
+                                    <div class="spec-text">
+                                        <div class="spec-label"><?php echo esc_html($spec['label']); ?></div>
+                                        <div class="spec-value"><?php echo esc_html($spec['value']); ?></div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                 </div>
                 <div class="column">

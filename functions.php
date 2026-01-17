@@ -33,6 +33,7 @@ function bb_theme_scripts() {
 	
 	// Page-specific styles
 	wp_enqueue_style( 'bb-page-styles', get_template_directory_uri() . '/page-styles.css', array('bb-assets'), '1.0.0' );
+    wp_enqueue_style( 'bb-spec-cards', get_template_directory_uri() . '/spec-cards.css', array('bb-page-styles'), '1.0.0' );
 	
 	// Main JavaScript
 	wp_enqueue_script( 'bb-main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true );
