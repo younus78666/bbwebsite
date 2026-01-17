@@ -32,7 +32,6 @@
     <div class="header-container">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
             <span class="logo-text">BB</span>
-            <span class="logo-tagline">Cigarettes</span>
         </a>
         <nav class="header-nav">
             <?php

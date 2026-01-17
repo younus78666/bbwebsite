@@ -1225,6 +1225,10 @@ img {
     background: var(--color-gold);
 }
 
+.mobile-menu-toggle.active span {
+    background: #1a1a1a;
+}
+
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
 }
@@ -1244,7 +1248,8 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(248, 248, 248, 0.98);
+    backdrop-filter: blur(10px);
     z-index: 999;
     display: flex;
     align-items: center;
@@ -1272,7 +1277,7 @@ img {
     font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 500;
-    color: var(--color-white);
+    color: #1a1a1a;
     transition: var(--transition-fast);
 }
 
