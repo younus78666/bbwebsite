@@ -14,27 +14,71 @@ get_header();
             <div class="product-image">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/full-flavor-pack.png" alt="BB Full Flavor Cigarettes Pack">
             </div>
-            <div class="product-details">
+            <div class="product-details-card">
                 <span class="product-category">Premium Full Flavor</span>
                 <h1>BB Full Flavor Cigarettes</h1>
                 <p class="product-subtitle">Experience the flagship BB Full Flavour Cigarettes that deliver the complete premium smoking experience. Crafted for smokers who appreciate bold, uncompromised tobacco character and rich, satisfying taste with every draw.</p>
                 
-                <div class="product-specs">
-                    <h3>Product Specifications</h3>
-                    <ul>
-                        <li><strong>Flavor Profile:</strong> Bold, robust, full-bodied</li>
-                        <li><strong>Strength:</strong> Full strength</li>
-                        <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
-                        <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
-                        <li><strong>Filter Type:</strong> Standard cellulose acetate filter</li>
-                        <li><strong>Tobacco Blend:</strong> Premium Virginia and Burley blend</li>
-                        <li><strong>Availability:</strong> Available across Canada</li>
-                    </ul>
-                </div>
-
                 <div class="product-cta">
                     <a href="https://1smokes.ca/bb-cigarettes-online/" class="btn btn-primary btn-large">Buy BB Full Flavor Online</a>
                     <p class="age-notice">⚠️ 18+ Only (19+ in some provinces). Must be of legal smoking age.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs & Calculator Section -->
+    <section class="product-section specs-calculator-section">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="column">
+                    <div class="product-specs-box">
+                        <h3>Product Specifications</h3>
+                        <ul>
+                            <li><strong>Flavor Profile:</strong> Bold, robust, full-bodied</li>
+                            <li><strong>Strength:</strong> Full strength</li>
+                            <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
+                            <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
+                            <li><strong>Filter Type:</strong> Standard cellulose acetate filter</li>
+                            <li><strong>Tobacco Blend:</strong> Premium Virginia and Burley blend</li>
+                            <li><strong>Availability:</strong> Available across Canada</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="hero-calculator">
+                        <div class="calc-header">
+                            <h3>Bulk Savings Calculator</h3>
+                            <p>See how much you save with our carton deals</p>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label for="cartonQty">Number of Cartons (1 carton = 10 packs)</label>
+                            <div class="qty-control">
+                                <button class="qty-btn minus" id="qtyMinus">-</button>
+                                <input type="number" id="cartonQty" value="1" min="1" max="100">
+                                <button class="qty-btn plus" id="qtyPlus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-breakdown">
+                            <div class="calc-row">
+                                <span>Price Per Carton:</span>
+                                <span class="calc-value" id="pricePerCarton">$37.00</span>
+                            </div>
+                            <div class="calc-row">
+                                <span>Total Price:</span>
+                                <span class="calc-value highlight" id="totalPrice">$37.00</span>
+                            </div>
+                            <div class="calc-row savings-row">
+                                <span>Your Savings:</span>
+                                <span class="calc-value savings" id="totalSavings">$22.90</span>
+                            </div>
+                            <p class="savings-note" id="savingsNote">You save $2.29 per pack!</p>
+                        </div>
+
+                        <a href="https://1smokes.ca/bb-cigarettes-online/" class="btn btn-primary btn-block">Buy Now & Save</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,7 +181,7 @@ get_header();
             <h2>Why Choose BB Full Flavor Over Other Cigarettes</h2>
             
             <p>In a crowded cigarette market, BB Full Flavor distinguishes itself through unwavering commitment to quality and consistency. While many brands compromise on tobacco quality to reduce costs, BB Cigarettes maintains strict standards for leaf selection, ensuring only premium materials make it into every pack.</p>
-
+            
             <div class="comparison-points">
                 <div class="point">
                     <h3>Premium Ingredients at Competitive Prices</h3>
@@ -148,7 +192,7 @@ get_header();
                     <h3>Consistent Taste Across All Packs</h3>
                     <p>One common complaint about budget cigarettes is inconsistency – one pack tastes great, the next is harsh and unsatisfying. BB Full Flavor eliminates this problem through rigorous quality control. Computer-monitored blending systems ensure the exact same tobacco ratio in every batch, while automated packaging prevents contamination or moisture variations.</p>
                 </div>
-
+                
                 <div class="point">
                     <h3>No Additives or Artificial Flavoring</h3>
                     <p>Unlike some competitors who use artificial flavoring agents or chemical additives to mask inferior tobacco, BB Full Flavor relies entirely on the natural characteristics of its premium tobacco blend. What you taste is pure tobacco – no artificial sweeteners, no flavor enhancers, just authentic smoking satisfaction.</p>
@@ -158,6 +202,12 @@ get_header();
                     <h3>Ideal for Daily Smokers</h3>
                     <p>If you smoke regularly, BB Full Flavor offers the perfect combination of satisfying flavor and value pricing. The full-bodied taste means you'll be satisfied with fewer cigarettes compared to lighter brands, while bulk purchasing options let you stock up and save significantly on your smoking budget.</p>
                 </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>Ready to Experience BB Full Flavor?</h3>
+                <p>Order now through our authorized Canadian retailer and enjoy premium cigarettes delivered to your door.</p>
+                <a href="https://1smokes.ca/bb-cigarettes-online/" class="btn btn-primary btn-large">Shop BB Full Flavor Now</a>
             </div>
         </div>
     </section>

@@ -14,27 +14,71 @@ get_header();
             <div class="product-image">
                 <img src="<?php echo get_template_directory_uri(); ?>/images/lights-pack.png" alt="BB Lights Cigarettes Pack">
             </div>
-            <div class="product-details">
+            <div class="product-details-card">
                 <span class="product-category">Refined Balance</span>
                 <h1>BB Lights Cigarettes - Smooth & Refined Experience</h1>
                 <p class="product-subtitle">Experience the refined balance of BB Lights Cigarettes. Crafted for smokers who appreciate premium tobacco quality with a gentler, smoother delivery without sacrificing taste integrity.</p>
                 
-                <div class="product-specs">
-                    <h3>Product Specifications</h3>
-                    <ul>
-                        <li><strong>Flavor Profile:</strong> Smooth, mellow, balanced</li>
-                        <li><strong>Strength:</strong> Reduced strength</li>
-                        <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
-                        <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
-                        <li><strong>Filter Type:</strong> High-efficiency vented filter</li>
-                        <li><strong>Tobacco Blend:</strong> Premium Virginia and lighter Burley blend</li>
-                        <li><strong>Availability:</strong> Available across Canada</li>
-                    </ul>
-                </div>
-
                 <div class="product-cta">
                     <a href="https://1smokes.ca/bb-lights-cigarettes/" class="btn btn-primary btn-large">Buy BB Lights Online</a>
                     <p class="age-notice">⚠️ 18+ Only (19+ in some provinces). Must be of legal smoking age.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specs & Calculator Section -->
+    <section class="product-section specs-calculator-section">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="column">
+                    <div class="product-specs-box">
+                        <h3>Product Specifications</h3>
+                        <ul>
+                            <li><strong>Flavor Profile:</strong> Smooth, mellow, balanced</li>
+                            <li><strong>Strength:</strong> Reduced strength</li>
+                            <li><strong>Pack Size:</strong> 20 cigarettes per pack</li>
+                            <li><strong>Carton Size:</strong> 10 packs (200 cigarettes)</li>
+                            <li><strong>Filter Type:</strong> High-efficiency vented filter</li>
+                            <li><strong>Tobacco Blend:</strong> Premium Virginia and lighter Burley blend</li>
+                            <li><strong>Availability:</strong> Available across Canada</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="hero-calculator">
+                        <div class="calc-header">
+                            <h3>Bulk Savings Calculator</h3>
+                            <p>See how much you save with our carton deals</p>
+                        </div>
+
+                        <div class="calc-input-group">
+                            <label for="cartonQty">Number of Cartons (1 carton = 10 packs)</label>
+                            <div class="qty-control">
+                                <button class="qty-btn minus" id="qtyMinus">-</button>
+                                <input type="number" id="cartonQty" value="1" min="1" max="100">
+                                <button class="qty-btn plus" id="qtyPlus">+</button>
+                            </div>
+                        </div>
+
+                        <div class="calc-breakdown">
+                            <div class="calc-row">
+                                <span>Price Per Carton:</span>
+                                <span class="calc-value" id="pricePerCarton">$37.00</span>
+                            </div>
+                            <div class="calc-row">
+                                <span>Total Price:</span>
+                                <span class="calc-value highlight" id="totalPrice">$37.00</span>
+                            </div>
+                            <div class="calc-row savings-row">
+                                <span>Your Savings:</span>
+                                <span class="calc-value savings" id="totalSavings">$22.90</span>
+                            </div>
+                            <p class="savings-note" id="savingsNote">You save $2.29 per pack!</p>
+                        </div>
+
+                        <a href="https://1smokes.ca/bb-lights-cigarettes/" class="btn btn-primary btn-block">Buy Now & Save</a>
+                    </div>
                 </div>
             </div>
         </div>
