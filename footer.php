@@ -1,15 +1,15 @@
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-brand">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="footer-logo" aria-label="BB Cigarettes Home">
                     <span class="logo-text">BB</span>
                     <span class="logo-tagline">Cigarettes</span>
                 </a>
                 <p class="footer-description">Experience the premium smoking experience with BB Cigarettes. Available across Canada.</p>
             </div>
-            <div class="footer-links">
+            <div class="footer-links" aria-label="Quick Links">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#about">About BB Smokes</a></li>
@@ -18,7 +18,7 @@
                     <li><a href="https://1smokes.ca/bb-cigarettes/">Buy Online</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+            <div class="footer-links" aria-label="Product Links">
                 <h4>Products</h4>
                 <ul>
                     <li><a href="<?php echo esc_url( home_url( '/bb-full-flavor/' ) ); ?>">BB Full Flavor</a></li>
@@ -27,7 +27,7 @@
                     <li><a href="https://1smokes.ca/bb-cigarettes/">Buy Online</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+            <div class="footer-links" aria-label="Legal and Information">
                 <h4>Information</h4>
                 <ul>
                     <li><a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">About Us</a></li>

@@ -28,12 +28,12 @@
 <?php endif; ?>
 
 <!-- HEADER NAVIGATION -->
-<header class="header" id="header">
+<header class="header" id="header" role="banner">
     <div class="header-container">
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-logo" aria-label="BB Cigarettes Home">
             <span class="logo-text">BB</span>
         </a>
-        <nav class="header-nav">
+        <nav class="header-nav" aria-label="Main Navigation">
             <?php
             wp_nav_menu( array(
                 'theme_location' => 'primary',
@@ -44,7 +44,7 @@
             ?>
         </nav>
         <a href="https://1smokes.ca/bb-cigarettes/" class="btn btn-primary header-cta">Buy Now</a>
-        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
             <span></span>
             <span></span>
             <span></span>

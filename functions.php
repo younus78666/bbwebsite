@@ -161,3 +161,89 @@ function bb_create_default_pages() {
 	update_option( 'bb_pages_created', true );
 }
 add_action( 'after_switch_theme', 'bb_create_default_pages' );
+
+/**
+ * Technical SEO Enhancements
+ * Adds Meta Tags, Open Graph, Twitter Cards, and Schema.org JSON-LD
+ */
+function bb_seo_meta_tags() {
+    global $post;
+    
+    // Default values
+    $site_name = get_bloginfo( 'name' );
+    $title = get_the_title() . ' | ' . $site_name;
+    $description = get_bloginfo( 'description' );
+    $url = get_permalink();
+    $image = get_template_directory_uri() . '/images/hero-product.png'; // Fallback image
+    
+    // Custom description for pages
+    if ( is_singular() && ! empty( $post->post_excerpt ) ) {
+        $description = strip_tags( $post->post_excerpt );
+    } elseif ( is_singular() && ! empty( $post->post_content ) ) {
+        $description = wp_trim_words( strip_tags( $post->post_content ), 25 );
+    }
+    
+    // Open Graph
+    echo '<meta property="og:site_name" content="' . esc_attr( $site_name ) . '" />' . "\n";
+    echo '<meta property="og:title" content="' . esc_attr( $title ) . '" />' . "\n";
+    echo '<meta property="og:description" content="' . esc_attr( $description ) . '" />' . "\n";
+    echo '<meta property="og:type" content="' . ( is_single() ? 'article' : 'website' ) . '" />' . "\n";
+    echo '<meta property="og:url" content="' . esc_url( $url ) . '" />' . "\n";
+    echo '<meta property="og:image" content="' . esc_url( $image ) . '" />' . "\n";
+    echo '<meta property="og:locale" content="en_CA" />' . "\n";
+    
+    // Twitter Card
+    echo '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+    echo '<meta name="twitter:title" content="' . esc_attr( $title ) . '" />' . "\n";
+    echo '<meta name="twitter:description" content="' . esc_attr( $description ) . '" />' . "\n";
+    echo '<meta name="twitter:image" content="' . esc_url( $image ) . '" />' . "\n";
+    
+    // Canonical
+    echo '<link rel="canonical" href="' . esc_url( $url ) . '" />' . "\n";
+    
+    // Schema.org JSON-LD
+    $schema = array();
+    
+    // Organization Schema (Global)
+    $schema[] = array(
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'BB Cigarettes',
+        'url' => home_url(),
+        'logo' => get_template_directory_uri() . '/images/logo.png', // Assuming logo path
+        'description' => 'Premium Canadian Cigarettes: Full Flavor, Lights, and Menthol.',
+        'address' => array(
+            '@type' => 'PostalAddress',
+            'addressCountry' => 'CA'
+        )
+    );
+    
+    // Product Schema (for product pages)
+    if ( is_page_template( array('template-full-flavor.php', 'template-lights.php', 'template-menthol.php') ) ) {
+        $product_name = get_the_title();
+        $schema[] = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'Product',
+            'name' => $product_name,
+            'image' => $image,
+            'description' => $description,
+            'brand' => array(
+                '@type' => 'Brand',
+                'name' => 'BB Cigarettes'
+            ),
+            'offers' => array(
+                '@type' => 'Offer',
+                'url' => 'https://1smokes.ca/bb-cigarettes/',
+                'priceCurrency' => 'CAD',
+                'availability' => 'https://schema.org/InStock',
+                'price' => '37.00' // Approximate starting price
+            )
+        );
+    }
+    
+    // Output Schema
+    foreach ( $schema as $entity ) {
+        echo '<script type="application/ld+json">' . json_encode( $entity ) . '</script>' . "\n";
+    }
+}
+add_action( 'wp_head', 'bb_seo_meta_tags', 5 );

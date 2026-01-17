@@ -2813,3 +2813,77 @@ body.no-scroll {
 .related-product-card .btn {
     width: 100%;
 }
+
+/* ============================
+   RESPONSIVE STYLES FOR MODERN ELEMENTS
+   ============================ */
+@media (max-width: 992px) {
+    .product-hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .product-image {
+        padding: var(--spacing-md);
+    }
+
+    .product-image img {
+        max-height: 350px;
+    }
+
+    .product-specs {
+        text-align: left;
+    }
+
+    .two-column-layout {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .features-grid-detailed,
+    .comparison-points {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .variants-comparison {
+        grid-template-columns: 1fr;
+    }
+
+    .related-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-hero {
+        padding-top: 100px;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-detailed {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .step-number {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .related-products {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-box {
+        padding: var(--spacing-lg);
+    }
+
+    .product-specs {
+        grid-template-columns: 1fr;
+    }
+}

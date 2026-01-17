@@ -10,7 +10,7 @@ get_header();
 <main id="main-content" class="site-main">
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero Section">
         <div class="hero-overlay"></div>
         <div class="hero-container">
             <div class="hero-content">
@@ -59,7 +59,7 @@ get_header();
     </section>
 
     <!-- INTRODUCTION SECTION -->
-    <section class="introduction" id="about">
+    <section class="introduction" id="about" aria-label="Introduction to BB Smokes">
         <div class="container">
             <div class="intro-grid">
                 <div class="intro-content">
@@ -113,7 +113,7 @@ get_header();
     </section>
 
     <!-- BRAND SECTION -->
-    <section class="brand-section">
+    <section class="brand-section" aria-label="Brand Overview">
         <div class="container">
             <div class="brand-content">
                 <span class="section-label">The Brand</span>
@@ -139,7 +139,7 @@ get_header();
     </section>
 
     <!-- QUALITY SECTION -->
-    <section class="quality-section" id="quality">
+    <section class="quality-section" id="quality" aria-label="Quality and Craftsmanship">
         <div class="container">
             <div class="quality-grid">
                 <div class="quality-image">
@@ -176,7 +176,7 @@ get_header();
     </section>
 
     <!-- PRODUCT VARIANTS -->
-    <section class="variants-section" id="products">
+    <section class="variants-section" id="products" aria-label="Product Variants">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Product Line</span>
@@ -243,7 +243,7 @@ get_header();
     </section>
 
     <!-- BENEFITS -->
-    <section class="benefits-section">
+    <section class="benefits-section" aria-label="Key Benefits">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Advantages</span>
@@ -287,7 +287,7 @@ get_header();
     </section>
 
     <!-- PURCHASE SECTION -->
-    <section class="purchase-section" id="buy">
+    <section class="purchase-section" id="buy" aria-label="How to Purchase">
         <div class="container">
             <div class="purchase-grid">
                 <div class="purchase-content">
@@ -319,7 +319,7 @@ get_header();
     </section>
 
     <!-- FAQ SECTION -->
-    <section class="faq-section" id="faq">
+    <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
         <div class="container">
             <div class="section-header">
                 <span class="section-label">Information</span>
@@ -357,7 +357,7 @@ get_header();
     </section>
 
     <!-- FINAL CTA -->
-    <section class="final-cta">
+    <section class="final-cta" aria-label="Final Call to Action">
         <div class="container">
             <div class="cta-content">
                 <span class="offer-badge">Limited Time Offer</span>
